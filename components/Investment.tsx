@@ -16,7 +16,7 @@ export default function Investment() {
             <div style={{
               height: '200px',
               position: 'relative',
-              backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/mutual-fund.png")',
+              backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/assets/mutual-fund.png")',
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}>
@@ -89,7 +89,7 @@ export default function Investment() {
             <div style={{
               height: '200px',
               position: 'relative',
-              backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/ndc.png")',
+              backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/assets/assets/ndc.png")',
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}>

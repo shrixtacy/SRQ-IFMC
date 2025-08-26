@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Services() {
   return (
     <section className="section bg-white" id="services">
@@ -10,6 +12,87 @@ export default function Services() {
           <p className="section-description">
             Comprehensive financial and insurance solutions tailored to your unique needs and objectives.
           </p>
+        </div>
+        
+        {/* Featured Service with Image */}
+        <div style={{ 
+          marginBottom: '4rem',
+          background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%)',
+          borderRadius: '24px',
+          padding: '3rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '3rem',
+          flexWrap: 'wrap'
+        }}>
+          <div style={{ flex: '1', minWidth: '300px' }}>
+            <h3 style={{ 
+              fontSize: '2rem', 
+              fontWeight: '700', 
+              color: '#1e293b', 
+              marginBottom: '1rem' 
+            }}>
+              Why Choose Our Services?
+            </h3>
+            <p style={{ 
+              fontSize: '1.1rem', 
+              color: '#64748b', 
+              lineHeight: '1.7',
+              marginBottom: '2rem'
+            }}>
+              Our comprehensive approach combines years of expertise with personalized service to deliver 
+              financial solutions that truly make a difference in your life and business.
+            </p>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <span style={{
+                background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+                color: 'white',
+                padding: '0.5rem 1rem',
+                borderRadius: '20px',
+                fontSize: '0.9rem',
+                fontWeight: '600'
+              }}>Expert Guidance</span>
+              <span style={{
+                background: 'linear-gradient(135deg, #8b5cf6, #7c3aed)',
+                color: 'white',
+                padding: '0.5rem 1rem',
+                borderRadius: '20px',
+                fontSize: '0.9rem',
+                fontWeight: '600'
+              }}>Personalized Solutions</span>
+              <span style={{
+                background: 'linear-gradient(135deg, #10b981, #059669)',
+                color: 'white',
+                padding: '0.5rem 1rem',
+                borderRadius: '20px',
+                fontSize: '0.9rem',
+                fontWeight: '600'
+              }}>Trusted Partners</span>
+            </div>
+          </div>
+          
+          <div style={{ flex: '1', minWidth: '300px', textAlign: 'center' }}>
+            <div style={{
+              borderRadius: '20px',
+              overflow: 'hidden',
+              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)',
+              background: 'rgba(255, 255, 255, 0.8)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.3)'
+            }}>
+              <Image 
+                src="/assets/assets/why.png" 
+                alt="Why Choose SRQ IFMC Services" 
+                width={400}
+                height={300}
+                style={{ 
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'cover'
+                }}
+              />
+            </div>
+          </div>
         </div>
         
         <div style={{display: 'flex', gap: '1.5rem', marginTop: '3rem', overflowX: 'auto', paddingBottom: '1rem'}}>
