@@ -50,44 +50,6 @@ export default function Team() {
               that resonate with audiences and drive meaningful engagement across all channels.
             </p>
           </div>
-          
-          <div className="team-card">
-            <div className="team-avatar" style={{
-              background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '2.5rem',
-              color: 'white'
-            }}>
-              👨‍💼
-            </div>
-            <h3 className="team-name">Financial Advisory Team</h3>
-            <p className="team-role">Investment & Insurance Specialists</p>
-            <p className="team-description">
-              Our certified financial advisors and insurance experts work collaboratively to provide comprehensive 
-              wealth management and protection strategies tailored to each client's unique needs.
-            </p>
-          </div>
-          
-          <div className="team-card">
-            <div className="team-avatar" style={{
-              background: 'linear-gradient(135deg, #10b981 0%, #06b6d4 100%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '2.5rem',
-              color: 'white'
-            }}>
-              🎯
-            </div>
-            <h3 className="team-name">Strategy & Operations</h3>
-            <p className="team-role">Business Development Experts</p>
-            <p className="team-description">
-              Our operations team ensures seamless service delivery and continuous improvement of our processes, 
-              while our strategy experts identify new opportunities for growth and innovation.
-            </p>
-          </div>
         </div>
         
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>

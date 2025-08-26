@@ -2,7 +2,9 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="hero bg-pattern" id="home">
+    <section className="hero bg-pattern" id="home" style={{
+      paddingTop: '120px' // Add padding to avoid navbar overlap
+    }}>
       <div className="gradient-orb gradient-orb-1"></div>
       <div className="gradient-orb gradient-orb-2"></div>
       <div className="gradient-orb gradient-orb-3"></div>
@@ -20,32 +22,15 @@ export default function Hero() {
           color: '#1e293b',
           letterSpacing: '-0.02em'
         }}>
-          <span style={{ display: 'block', marginBottom: '0.5rem' }}>
-            Crafting <span style={{
-              background: 'linear-gradient(135deg, #3b82f6, #60a5fa)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              fontWeight: '300'
-            }}>Influence.</span>
-          </span>
-          <span style={{ display: 'block', marginBottom: '0.5rem' }}>
-            Shaping <span style={{
-              background: 'linear-gradient(135deg, #8b5cf6, #a78bfa)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              fontWeight: '300'
-            }}>Brands.</span>
-          </span>
-          <span style={{ display: 'block' }}>
-            Inspiring <span style={{
-              background: 'linear-gradient(135deg, #3b82f6, #60a5fa)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              fontWeight: '300'
-            }}>Impact.</span>
+          Welcome to{' '}
+          <span style={{
+            background: 'linear-gradient(135deg, #3b82f6, #60a5fa)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            fontWeight: '300'
+          }}>
+            SRQ - IFMC
           </span>
         </h1>
         <p style={{
