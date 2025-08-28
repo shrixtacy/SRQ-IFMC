@@ -21,9 +21,9 @@ export default function Header() {
           <ul>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About Us</Link></li>
-            <li><Link href="#services">Services</Link></li>
-            <li><Link href="#investment">Investment</Link></li>
-            <li><Link href="#contact-us">Contact Us</Link></li>
+            <li><Link href="/finance">Finance</Link></li>
+            <li><Link href="/marketing-communication">Marketing and Communication</Link></li>
+            <li><Link href="/real-estate">Real Estate</Link></li>
           </ul>
         </nav>
       </div>

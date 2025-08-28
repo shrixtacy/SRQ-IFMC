@@ -3,10 +3,7 @@ import { useEffect, useState, useRef } from 'react'
 
 export default function ScrollSections() {
   const [scrollY, setScrollY] = useState(0)
-  const [activeSection, setActiveSection] = useState(-1)
-  const [isPaused, setIsPaused] = useState(false)
   const [windowHeight, setWindowHeight] = useState(0)
-  const pauseTimeoutRef = useRef<NodeJS.Timeout>()
 
   useEffect(() => {
     // Set initial window height
@@ -42,35 +39,7 @@ export default function ScrollSections() {
     
     // Full visibility in center
     if (scrollPosition < sectionCenter + fadeDistance) {
-      const opacity = 1
-      
-      // Check if this section should be active and pause scroll
-      if (scrollPosition >= sectionCenter - (fadeDistance * 0.5) && 
-          scrollPosition <= sectionCenter + (fadeDistance * 0.5) && 
-          activeSection !== sectionIndex && !isPaused) {
-        
-        setActiveSection(sectionIndex)
-        setIsPaused(true)
-        
-        // Pause scroll for 1.5 seconds using global lenis instance
-        const lenis = (window as any).lenis
-        if (lenis) {
-          lenis.stop()
-        }
-        
-        if (pauseTimeoutRef.current) {
-          clearTimeout(pauseTimeoutRef.current)
-        }
-        
-        pauseTimeoutRef.current = setTimeout(() => {
-          if (lenis) {
-            lenis.start()
-          }
-          setIsPaused(false)
-        }, 1500)
-      }
-      
-      return opacity
+      return 1
     }
     
     // Fade out
@@ -107,15 +76,6 @@ export default function ScrollSections() {
     }
   ]
 
-  // Cleanup timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (pauseTimeoutRef.current) {
-        clearTimeout(pauseTimeoutRef.current)
-      }
-    }
-  }, [])
-
   return (
     <>
       {sections.map((section, index) => {
@@ -141,7 +101,7 @@ export default function ScrollSections() {
                 opacity: opacity,
                 filter: blur,
                 transform: `translateY(${(1 - opacity) * 30}px) scale(${scale})`,
-                transition: isPaused ? 'all 0.8s ease-out' : 'all 0.4s ease-out'
+                transition: 'all 0.4s ease-out'
               }}
             >
               <h2
@@ -152,8 +112,7 @@ export default function ScrollSections() {
                   lineHeight: '1.1',
                   color: '#1e293b',
                   letterSpacing: '-0.02em',
-                  margin: 0,
-                  textShadow: activeSection === index ? '0 4px 20px rgba(0, 0, 0, 0.1)' : 'none'
+                  margin: 0
                 }}
               >
                 {section.text}{' '}
