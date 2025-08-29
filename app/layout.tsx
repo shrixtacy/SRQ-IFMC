@@ -18,6 +18,11 @@ const sourceSans = Source_Sans_3({
 export const metadata: Metadata = {
   title: 'SRQ IFMC',
   description: 'Empowering Brands. Influencing Minds. Delivering Finance & Insurance Solutions.',
+  icons: {
+    icon: '/assets/assets/SRIQ IFMC LLP BRAND KIT.svg',
+    shortcut: '/assets/assets/SRIQ IFMC LLP BRAND KIT.svg',
+    apple: '/assets/assets/SRIQ IFMC LLP BRAND KIT.svg',
+  },
 }
 
 export default function RootLayout({

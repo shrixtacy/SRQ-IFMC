@@ -1,4 +1,27 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
+
 export default function Features() {
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
   const features = [
     {
       title: 'Expert Financial Advisory',
@@ -27,9 +50,9 @@ export default function Features() {
   ]
 
   return (
-    <section className="py-20 bg-white">
+    <section ref={sectionRef} className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
             WHY CHOOSE <span className="text-blue-600">SRQ IFMC</span>
           </h2>
@@ -43,7 +66,15 @@ export default function Features() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="group hover:scale-105 transition-all duration-300"
+              className={`group hover:scale-105 transition-all duration-300 ${
+                isVisible 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-10'
+              }`}
+              style={{ 
+                transitionDelay: isVisible ? `${index * 150}ms` : '0ms',
+                transitionDuration: '800ms'
+              }}
             >
               <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-gray-100 h-full">
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${feature.gradient} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
