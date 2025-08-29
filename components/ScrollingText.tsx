@@ -62,7 +62,8 @@ export default function ScrollingText() {
   }
 
   return (
-    <div className="relative">
+    // Hide on mobile (md:block means show on medium screens and up)
+    <div className="relative hidden md:block">
       {texts.map((text, index) => (
         <section
           key={index}
@@ -71,7 +72,7 @@ export default function ScrollingText() {
         >
           <div className="absolute inset-0 flex items-center justify-center">
             <h2
-              className="text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-thin text-gray-900 text-center leading-none tracking-wide transition-all duration-500 ease-out"
+              className="text-6xl lg:text-8xl xl:text-9xl 2xl:text-[10rem] font-thin text-gray-900 text-center leading-none tracking-wide transition-all duration-500 ease-out"
               style={{
                 opacity: getTextOpacity(index),
                 filter: `blur(${getTextBlur(index)}px)`,

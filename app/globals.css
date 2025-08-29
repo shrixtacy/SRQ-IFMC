@@ -719,28 +719,100 @@ body {
     transition: width 0.1s ease;
 }
 
+/* Mobile Optimizations - Remove blur effects */
+@media (max-width: 767px) {
+    /* Disable all blur effects on mobile */
+    .glass,
+    .glass-strong {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.95);
+    }
+
+    .card,
+    .team-card,
+    .stack-card {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.98);
+    }
+
+    .header {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.98);
+    }
+
+    /* Remove all filter effects and animations */
+    *,
+    *::before,
+    *::after {
+        filter: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        animation: none !important;
+        transition: transform 0.3s ease, opacity 0.3s ease !important;
+    }
+
+    /* Disable complex animations */
+    .gradient-orb {
+        display: none;
+    }
+
+    .bg-pattern::before {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .scroll-stack-item {
+        top: 5vh;
+    }
+    
+    .stack-card {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        overflow-x: hidden;
+        width: 100vw;
+    }
+
     .hero-headline {
         font-size: 2rem;
+        line-height: 1.1;
     }
 
     .hero-subtext {
-        font-size: 0.88rem;
+        font-size: 0.9rem;
+        padding: 0 1rem;
     }
 
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 0.8rem;
+        padding: 0 1rem;
     }
 
     .btn {
         width: 100%;
-        max-width: 300px;
+        max-width: 280px;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
     }
 
     .nav ul {
         gap: 1rem;
+        font-size: 0.85rem;
     }
 
     .header-container {
@@ -748,25 +820,30 @@ body {
     }
 
     .section {
-        padding: 3rem 0;
+        padding: 2rem 0;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.2;
+        padding: 0 1rem;
     }
 
     .section-description {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        padding: 0 1rem;
     }
 
     .cards-grid.three-columns,
     .cards-grid.two-columns {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 1.2rem;
+        padding: 0 1rem;
     }
 
     .card {
         padding: 1.5rem;
+        margin: 0 0.5rem;
     }
 
     .card-icon {
@@ -774,26 +851,149 @@ body {
         height: 60px;
         font-size: 1.5rem;
     }
-}
 
-@media (max-width: 480px) {
-    .hero-headline {
-        font-size: 1.6rem;
-    }
-
-    .hero-content {
-        padding: 0 0.8rem;
-    }
-
-    .section-container {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
         padding: 0 1rem;
     }
 
-    .section-title {
+    .team-card {
+        padding: 1.5rem;
+    }
+
+    .stack-card {
+        padding: 1.5rem;
+        margin: 0 0.5rem;
+    }
+
+    .scroll-stack-item {
+        top: 2vh;
+        margin-bottom: 1rem;
+    }
+
+    /* Mobile-specific animations */
+    .card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+
+    .team-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .stack-card:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+
+    .hero-headline {
         font-size: 1.8rem;
+        line-height: 1.1;
+        padding: 0 0.5rem;
+    }
+
+    .hero-content {
+        padding: 0 0.5rem;
+    }
+
+    .hero-subtext {
+        font-size: 0.85rem;
+        padding: 0 0.5rem;
+    }
+
+    .section-container {
+        padding: 0 0.5rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        padding: 0 0.5rem;
     }
 
     .section-description {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        padding: 0 0.5rem;
+    }
+
+    .card {
+        padding: 1rem;
+        margin: 0 0.25rem;
+    }
+
+    .team-card {
+        padding: 1rem;
+    }
+
+    .stack-card {
+        padding: 1rem;
+        margin: 0 0.25rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+        max-width: 260px;
+    }
+
+    .cta-buttons {
+        padding: 0 0.5rem;
+    }
+
+    /* Reduce animation intensity on small screens */
+    .card:hover,
+    .team-card:hover,
+    .stack-card:hover {
+        transform: translateY(-2px);
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .card:hover,
+    .team-card:hover,
+    .stack-card:hover,
+    .btn:hover {
+        transform: none;
+    }
+
+    .card:active,
+    .team-card:active,
+    .stack-card:active {
+        transform: scale(0.98);
+    }
+
+    .btn:active {
+        transform: scale(0.95);
+    }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding: 1rem 0;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .hero-headline {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-subtext {
+        font-size: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .section {
+        padding: 1.5rem 0;
     }
 }
