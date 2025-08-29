@@ -2,55 +2,37 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section className="hero bg-pattern" id="home" style={{
-      paddingTop: '120px' // Add padding to avoid navbar overlap
-    }}>
-      <div className="gradient-orb gradient-orb-1"></div>
-      <div className="gradient-orb gradient-orb-2"></div>
-      <div className="gradient-orb gradient-orb-3"></div>
-      
-      <div className="hero-content" style={{
-        maxWidth: '900px',
-        padding: '0 2rem'
-      }}>
-        <h1 style={{
-          fontSize: 'clamp(3rem, 7vw, 6rem)',
-          fontWeight: '200',
-          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
-          lineHeight: '1.1',
-          marginBottom: '2rem',
-          color: '#1e293b',
-          letterSpacing: '-0.02em'
-        }}>
-          Welcome to{' '}
-          <span style={{
-            background: 'linear-gradient(135deg, #3b82f6, #60a5fa)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            fontWeight: '300'
-          }}>
-            SRQ - IFMC
-          </span>
+    <section className="relative min-h-screen flex items-center pt-28 bg-white">
+      <div className="max-w-7xl mx-auto px-6 w-full">
+        {/* Large minimalistic heading - left aligned */}
+        <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-gray-900 mb-12 leading-none tracking-tight">
+          FINANCE &
+          <br />
+          COMMUNICATION
+          <br />
+          <span className="text-blue-600">AGENCY</span>
         </h1>
-        <p style={{
-          fontSize: 'clamp(1.25rem, 3vw, 1.5rem)',
-          fontWeight: '300',
-          fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
-          color: '#64748b',
-          marginBottom: '3rem',
-          maxWidth: '600px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          lineHeight: '1.6',
-          letterSpacing: '0.01em'
-        }}>
-          Empowering Brands. Influencing Minds. Delivering Finance & Insurance Solutions.
-        </p>
-        <div className="cta-buttons">
-          <Link href="#get-started" className="btn btn-primary">Get Started</Link>
-          <Link href="#services" className="btn btn-secondary">View Services</Link>
+        
+        {/* Left-aligned descriptive text */}
+        <div className="max-w-lg mb-12">
+          <p className="text-base text-gray-600 font-light leading-relaxed mb-4 uppercase tracking-wide">
+            WE SPECIALIZE IN COMPREHENSIVE FINANCIAL ADVISORY SERVICES, 
+            STRATEGIC MARKETING COMMUNICATIONS, AND PREMIUM REAL ESTATE 
+            SOLUTIONS TAILORED FOR MODERN BUSINESSES.
+          </p>
+          <p className="text-sm text-gray-500 font-light leading-relaxed">
+            From investment planning and insurance solutions to brand strategy and property consultancy, 
+            we deliver integrated expertise that drives sustainable growth and builds lasting value for our clients.
+          </p>
         </div>
+
+        {/* Minimal CTA - left aligned */}
+        <Link 
+          href="/about" 
+          className="inline-block px-8 py-3 bg-gray-900 text-white text-xs font-medium tracking-wider uppercase hover:bg-gray-800 transition-colors duration-300"
+        >
+          Discover More
+        </Link>
       </div>
     </section>
   )

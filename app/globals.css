@@ -1,3 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Sans+3:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animation delays */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom glass morphism utilities */
+.glass {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-strong {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Impactful Typography */
+.font-heading {
+  font-family: var(--font-playfair);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.font-display {
+  font-family: var(--font-playfair);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.font-body {
+  font-family: var(--font-source-sans);
+  font-weight: 400;
+}
+
+.font-body-bold {
+  font-family: var(--font-source-sans);
+  font-weight: 700;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +64,10 @@
 html {
     width: 100%;
     overflow-x: hidden;
-    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-source-sans), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #1e293b;
     width: 100%;
@@ -129,6 +185,7 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
     color: #1e3a8a;
+    font-family: var(--font-playfair);
 }
 
 .nav ul {
@@ -189,6 +246,7 @@ body {
     line-height: 1.2;
     margin-bottom: 1.2rem;
     color: #1e293b;
+    font-family: var(--font-playfair);
 }
 
 .hero-headline span {
@@ -210,6 +268,7 @@ body {
     max-width: 480px;
     margin-left: auto;
     margin-right: auto;
+    font-family: var(--font-source-sans);
 }
 
 .cta-buttons {
@@ -308,6 +367,7 @@ body {
     font-weight: 700;
     color: #1e293b;
     margin-bottom: 1rem;
+    font-family: var(--font-playfair);
 }
 
 .title-underline {
@@ -324,6 +384,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
+    font-family: var(--font-source-sans);
 }
 
 /* Team Section Styles */
@@ -389,6 +450,7 @@ body {
     font-weight: 700;
     color: #1e293b;
     margin-bottom: 0.5rem;
+    font-family: var(--font-playfair);
 }
 
 .team-role {
@@ -396,12 +458,14 @@ body {
     color: #3b82f6;
     font-weight: 600;
     margin-bottom: 1rem;
+    font-family: var(--font-source-sans);
 }
 
 .team-description {
     font-size: 0.95rem;
     color: #64748b;
     line-height: 1.6;
+    font-family: var(--font-source-sans);
 }
 
 /* Premium Button Styles */
@@ -417,6 +481,7 @@ body {
     display: inline-block;
     position: relative;
     overflow: hidden;
+    font-family: var(--font-source-sans);
 }
 
 .btn::before {
@@ -598,6 +663,7 @@ body {
     color: #1e293b;
     margin-bottom: 1.5rem;
     text-align: center;
+    font-family: var(--font-playfair);
 }
 
 .stack-card p, .stack-card ul {
@@ -605,6 +671,7 @@ body {
     color: #64748b;
     line-height: 1.7;
     text-align: center;
+    font-family: var(--font-source-sans);
 }
 
 .stack-card ul {
