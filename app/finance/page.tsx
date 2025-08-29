@@ -10,55 +10,21 @@ export default function Finance() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-96 h-96 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-1/2 w-80 h-80 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
-        </div>
-
-        <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
-          {/* Logo */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative">
-              <Image 
-                src="/assets/assets/SRQ_LOGO.jpeg" 
-                alt="SRQ IFMC Logo" 
-                width={140}
-                height={140}
-                className="rounded-full shadow-2xl backdrop-blur-sm bg-white/10 border border-white/20 p-2"
-              />
-            </div>
-          </div>
-
-          {/* Main Heading */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-light mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
-              Finance Solutions
-            </span>
+      <section className="relative min-h-screen flex items-center justify-center pt-24 bg-gradient-to-br from-slate-800 via-blue-900 to-blue-700">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-display font-black text-white mb-6 leading-tight tracking-tight">
+            Financial Excellence
           </h1>
-
-          {/* Decorative Line */}
-          <div className="flex items-center justify-center mb-8">
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-            <div className="w-2 h-2 bg-blue-500 rounded-full mx-4"></div>
-            <div className="w-24 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-          </div>
-
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-gray-600 mb-12 font-light max-w-4xl mx-auto leading-relaxed">
-            Comprehensive financial services and investment solutions tailored for your success
+          <p className="text-xl md:text-2xl font-body text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Comprehensive financial planning, investment advisory, and insurance solutions tailored for your success.
           </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="px-8 py-4 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-gray-800 font-medium hover:bg-white/30 transition-all duration-300 hover:scale-105 hover:shadow-xl">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="px-8 py-4 bg-white/10 backdrop-blur-md text-white font-body-bold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
               Our Services
             </button>
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-medium hover:shadow-xl transition-all duration-300 hover:scale-105 relative overflow-hidden group">
-              <span className="relative z-10">Get Consultation</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-slate-600 text-white font-body-bold rounded-xl hover:from-blue-600 hover:to-slate-700 transition-all duration-300 shadow-lg">
+              Get Financial Advice
             </button>
           </div>
         </div>

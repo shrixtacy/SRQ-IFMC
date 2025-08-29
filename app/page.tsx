@@ -1,10 +1,13 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import ScrollSections from '@/components/ScrollSections'
-import About from '@/components/About'
+import ScrollingText from '@/components/ScrollingText'
+import Features from '@/components/Features'
+import Stats from '@/components/Stats'
 import Services from '@/components/Services'
+import Testimonials from '@/components/Testimonials'
+import About from '@/components/About'
 import Team from '@/components/Team'
-import Investment from '@/components/Investment'
+import CTA from '@/components/CTA'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
@@ -13,11 +16,14 @@ export default function Home() {
     <main>
       <Header />
       <Hero />
-      <ScrollSections />
-      <About />
+      <ScrollingText />
+      <Features />
+      <Stats />
       <Services />
+      <Testimonials />
+      <About />
       <Team />
-      <Investment />
+      <CTA />
       <Contact />
       <Footer />
     </main>
