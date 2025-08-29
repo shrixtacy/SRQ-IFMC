@@ -13,13 +13,15 @@ export default function AboutPage() {
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
           {/* Logo */}
           <div className="mb-8">
-            <Image 
-              src="/assets/assets/SRQ_LOGO.jpeg" 
-              alt="SRQ IFMC Logo" 
-              width={140}
-              height={140}
-              className="mx-auto rounded-full shadow-2xl ring-4 ring-white/20 backdrop-blur-xl"
-            />
+            <div className="w-32 h-32 mx-auto rounded-full bg-white/20 backdrop-blur-xl shadow-2xl ring-4 ring-white/20 flex items-center justify-center p-4 overflow-hidden">
+              <Image 
+                src="/assets/assets/SRIQ IFMC LLP BRAND KIT.svg" 
+                alt="SRIQ IFMC LLP Logo" 
+                width={80}
+                height={80}
+                className="object-contain"
+              />
+            </div>
           </div>
           
           {/* Main Heading */}
