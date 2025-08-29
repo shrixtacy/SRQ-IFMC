@@ -13,8 +13,8 @@ export default function Team() {
           </h2>
           <div className="title-underline"></div>
           <p className="section-description">
-            Our dedicated professionals bring years of expertise in finance, insurance, and strategic communications 
-            to deliver exceptional results for our clients.
+            Our dedicated professionals bring decades of combined expertise in finance, real estate, strategic communications, 
+            and business operations to deliver exceptional results and drive sustainable growth for our clients.
           </p>
         </div>
         
@@ -30,8 +30,9 @@ export default function Team() {
             <h3 className="team-name">Punyabrata Mohanty</h3>
             <p className="team-role">Chief Executive Officer</p>
             <p className="team-description">
-              Visionary leader with over 15 years of experience in financial services and strategic business development. 
-              Punyabrata drives our mission to deliver innovative solutions that create lasting value for our clients.
+              A seasoned executive with 27 years of chronicle success in Public Relations, Corporate Communication, 
+              Corporate Affairs, Brand Management, Liaisoning and HR. Punyabrata's extensive expertise drives strategic 
+              growth and builds lasting partnerships that create exceptional value for our clients.
             </p>
           </div>
           
@@ -44,10 +45,28 @@ export default function Team() {
               className="team-avatar"
             />
             <h3 className="team-name">Manasi Jena</h3>
-            <p className="team-role">Head of Strategic Communications</p>
+            <p className="team-role">Head of Operations & Finance</p>
             <p className="team-description">
-              Expert communicator specializing in brand strategy and market positioning. Manasi crafts compelling narratives 
-              that resonate with audiences and drive meaningful engagement across all channels.
+              A versatile professional with 20 years of comprehensive experience in administration, office management, 
+              law enforcement, surveillance and financial consultation. Manasi ensures operational excellence while 
+              providing strategic financial guidance that drives organizational success.
+            </p>
+          </div>
+
+          <div className="team-card">
+            <Image 
+              src="/assets/assets/WhatsApp Image 2025-08-29 at 1.31.46 PM.jpeg" 
+              alt="Itismita Swain" 
+              width={120}
+              height={120}
+              className="team-avatar"
+            />
+            <h3 className="team-name">Itismita Swain</h3>
+            <p className="team-role">Head of Sales - Real Estate</p>
+            <p className="team-description">
+              A real estate industry veteran with 15 years of hard-core experience in property sales, investment advisory, 
+              and market analysis. Itismita's deep understanding of real estate dynamics and client-focused approach 
+              consistently delivers exceptional results in property transactions and investment opportunities.
             </p>
           </div>
         </div>

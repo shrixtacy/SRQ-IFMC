@@ -3,27 +3,73 @@
 import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { useEffect, useRef } from 'react'
 
 export default function MarketingCommunication() {
+  const sectionRefs = useRef<(HTMLElement | null)[]>([])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in')
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    sectionRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-purple-50 overflow-hidden">
       <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-24 bg-gradient-to-br from-purple-600 via-pink-600 to-purple-800">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-display font-black text-white mb-6 leading-tight tracking-tight">
-            Marketing Excellence
+      <section className="relative min-h-screen flex items-center justify-center pt-16 sm:pt-20 bg-gradient-to-br from-purple-900 via-pink-800 to-purple-900">
+        {/* Background Image - No blur on mobile */}
+        <div className="absolute inset-0">
+          <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80')] bg-cover bg-center md:block hidden"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-pink-800 to-purple-900 md:from-purple-900/80 md:via-pink-800/70 md:to-purple-900/80"></div>
+        </div>
+        
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-60 h-60 sm:w-80 sm:h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute -bottom-40 -left-40 w-60 h-60 sm:w-80 sm:h-80 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6">
+
+          
+          {/* Enhanced heading */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-pink-100 mb-4 sm:mb-6 leading-tight tracking-tight animate-slide-up">
+            SRQ MARKETING
           </h1>
-          <p className="text-xl md:text-2xl font-body text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Strategic marketing and communication solutions that amplify your brand and drive meaningful engagement.
+          
+          {/* Decorative elements */}
+          <div className="flex items-center justify-center mb-6 sm:mb-8 animate-fade-in delay-300">
+            <div className="h-px bg-gradient-to-r from-transparent via-white/50 to-transparent w-16 sm:w-24"></div>
+            <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full mx-3 sm:mx-4 animate-pulse"></div>
+            <div className="h-px bg-gradient-to-r from-transparent via-white/50 to-transparent w-16 sm:w-24"></div>
+          </div>
+          
+          {/* Enhanced subtitle */}
+          <p className="text-base sm:text-lg md:text-xl font-light text-white/90 mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed animate-slide-up delay-500 px-2">
+            Strategic Brand Communication. Digital Marketing Excellence. Creative Campaign Solutions.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-white/10 backdrop-blur-md text-white font-body-bold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
-              View Our Work
+          
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in delay-700 px-4">
+            <button className="px-6 sm:px-8 py-3 bg-white/10 backdrop-blur-md text-white font-semibold rounded-xl border-2 border-white/30 hover:bg-white/20 transition-all duration-300 hover:scale-105 text-sm sm:text-base">
+              View Portfolio
             </button>
-            <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-body-bold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 shadow-lg">
+            <button className="px-6 sm:px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm sm:text-base">
               Start Your Campaign
             </button>
           </div>
@@ -31,29 +77,55 @@ export default function MarketingCommunication() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-6">
+      <section 
+        ref={(el) => { sectionRefs.current[0] = el }}
+        className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 opacity-0 translate-y-20 transition-all duration-1000"
+      >
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
-              Our <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Services</span>
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+            <div className="inline-block mb-4 sm:mb-6">
+              <span className="px-3 sm:px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                Marketing Services
+              </span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 px-2">
+              Strategic <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Marketing Solutions</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive marketing and communication strategies to elevate your brand
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+              Comprehensive marketing and communication strategies designed to amplify your brand presence and drive meaningful engagement
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Digital Marketing */}
-            <div className="group p-8 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/80 transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl mb-6 flex items-center justify-center">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+            <div className="group">
+              <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 h-full hover:-translate-y-2">
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-2xl">💻</span>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="text-xl font-bold text-gray-900">Digital Marketing</h3>
+                  </div>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Comprehensive digital strategies including SEO, SEM, social media marketing, and targeted advertising campaigns.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center text-gray-500">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                    SEO & SEM Optimization
+                  </div>
+                  <div className="flex items-center text-gray-500">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                    Social Media Campaigns
+                  </div>
+                  <div className="flex items-center text-gray-500">
+                    <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                    Performance Analytics
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Digital Marketing</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Comprehensive digital marketing strategies including SEO, SEM, social media marketing, and online advertising campaigns.
-              </p>
             </div>
 
             {/* Brand Strategy */}
@@ -124,8 +196,57 @@ export default function MarketingCommunication() {
         </div>
       </section>
 
+      {/* Visual Showcase Section */}
+      <section 
+        ref={(el) => { sectionRefs.current[1] = el }}
+        className="py-32 bg-gradient-to-br from-purple-50 to-pink-100 opacity-0 translate-y-20 transition-all duration-1000"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="aspect-square bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl p-8 shadow-2xl">
+                <div className="w-full h-full bg-white rounded-2xl shadow-inner flex items-center justify-center">
+                  <div className="text-center space-y-6">
+                    <div className="text-8xl">🎨</div>
+                    <h3 className="text-2xl font-bold text-gray-800">Creative Excellence</h3>
+                    <p className="text-gray-600">Innovative marketing campaigns that captivate audiences</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-8">
+              <div className="inline-block">
+                <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold tracking-wide uppercase">
+                  Marketing Excellence
+                </span>
+              </div>
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+                Creative Campaigns That 
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600"> Drive Results</span>
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed">
+                Our award-winning marketing team creates compelling campaigns that not only capture attention but drive measurable business results through strategic storytelling and data-driven insights.
+              </p>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+                  <div className="text-3xl font-bold text-purple-600 mb-2">200+</div>
+                  <div className="text-gray-600">Campaigns Delivered</div>
+                </div>
+                <div className="text-center p-6 bg-white rounded-2xl shadow-lg">
+                  <div className="text-3xl font-bold text-pink-600 mb-2">300%</div>
+                  <div className="text-gray-600">Average ROI</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Process Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-purple-50 to-pink-50">
+      <section 
+        ref={(el) => { sectionRefs.current[2] = el }}
+        className="py-32 px-6 bg-gradient-to-r from-purple-50 to-pink-50 opacity-0 translate-y-20 transition-all duration-1000"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
@@ -218,6 +339,55 @@ export default function MarketingCommunication() {
       </section>
 
       <Footer />
+      
+      <style jsx>{`
+        .animate-fade-in {
+          animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .animate-slide-up {
+          animation: slideUp 1s ease-out forwards;
+        }
+        
+        .delay-300 {
+          animation-delay: 0.3s;
+        }
+        
+        .delay-500 {
+          animation-delay: 0.5s;
+        }
+        
+        .delay-700 {
+          animation-delay: 0.7s;
+        }
+        
+        .animate-in {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+        
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </div>
   )
 }
