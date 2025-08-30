@@ -112,7 +112,7 @@ export default function Footer() {
                   📍
                 </div>
                 <p style={{color: '#94a3b8', margin: 0, lineHeight: 1.5}}>
-                  123 Financial District, Business Tower<br />New York, NY 10001
+                  DCB-228 DLF CYBERCITY, PATIA BHUBANESWAR
                 </p>
               </div>
               
@@ -128,7 +128,7 @@ export default function Footer() {
                 }}>
                   📞
                 </div>
-                <p style={{color: '#94a3b8', margin: 0}}>+1 (555) 123-4567</p>
+                <p style={{color: '#94a3b8', margin: 0}}>+91 87630 19090</p>
               </div>
               
               <div style={{display: 'flex', gap: '0.75rem', alignItems: 'center'}}>

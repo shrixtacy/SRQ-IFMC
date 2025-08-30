@@ -2,9 +2,13 @@ import Image from 'next/image'
 
 export default function Team() {
   return (
-    <section className="section bg-gray bg-pattern" id="team">
+    <section className="section bg-gray bg-pattern relative overflow-hidden" id="team">
       <div className="gradient-orb gradient-orb-1"></div>
       <div className="gradient-orb gradient-orb-2"></div>
+      
+      {/* Additional blue gradient elements - Hidden on mobile */}
+      <div className="hidden md:block absolute top-16 right-12 w-48 h-48 bg-blue-500/45 rounded-full blur-3xl animate-pulse"></div>
+      <div className="hidden md:block absolute bottom-28 left-14 w-56 h-56 bg-blue-400/50 rounded-full blur-2xl animate-pulse delay-800"></div>
       
       <div className="section-container">
         <div className="section-header">
@@ -18,7 +22,7 @@ export default function Team() {
           </p>
         </div>
         
-        <div className="team-grid">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-0">
           <div className="team-card">
             <Image 
               src="/assets/assets/punyabrata-mohanty.jpeg" 

@@ -38,8 +38,8 @@ export default function Header() {
       {/* Desktop Header */}
       <div className="hidden md:flex justify-center">
         <header className={`transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] bg-white/95 backdrop-blur-md shadow-lg transform-gpu will-change-transform ${isScrolled
-            ? 'mt-4 py-2 px-8 rounded-3xl w-[85vw] max-w-6xl scale-[0.98]'
-            : 'mt-0 py-3 px-0 w-full rounded-none scale-100'
+          ? 'mt-4 py-2 px-8 rounded-3xl w-[85vw] max-w-6xl scale-[0.98]'
+          : 'mt-0 py-3 px-0 w-full rounded-none scale-100'
           }`}>
           <div className={`flex justify-between items-center transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'px-0' : 'max-w-7xl mx-auto px-6'
             }`}>
@@ -55,7 +55,7 @@ export default function Header() {
               </div>
               <span className={`font-bold text-blue-800 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isScrolled ? 'text-base' : 'text-xl'
                 }`}>
-                SRQ IFMC
+                SRQ
               </span>
             </div>
             <nav>
@@ -129,7 +129,7 @@ export default function Header() {
                 />
               </div>
               <span className="font-bold text-blue-800 text-lg">
-                SRQ IFMC
+                SRQ
               </span>
             </div>
 

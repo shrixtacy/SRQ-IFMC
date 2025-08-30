@@ -24,7 +24,11 @@ export default function Services() {
     return () => observer.disconnect()
   }, [])
   return (
-    <section ref={sectionRef} className="section bg-white" id="services">
+    <section ref={sectionRef} className="section bg-white relative overflow-hidden" id="services">
+      {/* Blue gradient elements - Hidden on mobile */}
+      <div className="hidden md:block absolute top-24 left-6 w-60 h-60 bg-blue-500/45 rounded-full blur-3xl"></div>
+      <div className="hidden md:block absolute bottom-32 right-8 w-48 h-48 bg-blue-400/50 rounded-full blur-2xl animate-pulse"></div>
+      
       <div className="section-container">
         <div className={`section-header transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="section-title">
@@ -41,13 +45,13 @@ export default function Services() {
           marginBottom: '4rem',
           background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%)',
           borderRadius: '24px',
-          padding: '3rem',
+          padding: '2rem',
           display: 'flex',
           alignItems: 'center',
-          gap: '3rem',
+          gap: '2rem',
           flexWrap: 'wrap'
-        }}>
-          <div style={{ flex: '1', minWidth: '300px' }}>
+        }} className="sm:p-8 sm:gap-12">
+          <div style={{ flex: '1', minWidth: '280px' }}>
             <h3 style={{ 
               fontSize: '2rem', 
               fontWeight: '700', 
@@ -93,7 +97,7 @@ export default function Services() {
             </div>
           </div>
           
-          <div style={{ flex: '1', minWidth: '300px', textAlign: 'center' }}>
+          <div style={{ flex: '1', minWidth: '280px', textAlign: 'center' }}>
             <div style={{
               borderRadius: '20px',
               overflow: 'hidden',
@@ -117,7 +121,7 @@ export default function Services() {
           </div>
         </div>
         
-        <div style={{display: 'flex', gap: '1.5rem', marginTop: '3rem', overflowX: 'auto', paddingBottom: '1rem', justifyContent: 'center'}}>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginTop: '3rem', padding: '0 1rem'}} className="md:flex md:overflow-x-auto md:justify-center md:grid-cols-none">
           <div style={{
             padding: '2rem 1.5rem',
             borderRadius: '16px',
