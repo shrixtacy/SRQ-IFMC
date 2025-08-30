@@ -35,7 +35,11 @@ export default function About() {
   }, [cards.length])
 
   return (
-    <section className="section bg-gray" id="about" style={{ padding: '4rem 0' }}>
+    <section className="section bg-gray relative overflow-hidden" id="about" style={{ padding: '4rem 0' }}>
+      {/* Blue gradient elements - Hidden on mobile */}
+      <div className="hidden md:block absolute top-20 left-8 w-52 h-52 bg-blue-500/40 rounded-full blur-3xl animate-pulse"></div>
+      <div className="hidden md:block absolute bottom-24 right-10 w-44 h-44 bg-blue-400/50 rounded-full blur-2xl animate-pulse delay-1000"></div>
+      
       <div className="section-container">
         <div className="section-header" style={{ marginBottom: '3rem' }}>
           <h2 className="section-title">
@@ -50,11 +54,11 @@ export default function About() {
         {/* Stacked Cards Container */}
         <div style={{
           position: 'relative',
-          height: '400px',
-          maxWidth: '600px',
+          height: '350px',
+          maxWidth: '500px',
           margin: '0 auto',
           perspective: '1000px'
-        }}>
+        }} className="sm:h-96 sm:max-w-2xl">
           {cards.map((card, index) => {
             const isActive = index === activeCard
             const isPrev = index === (activeCard - 1 + cards.length) % cards.length
@@ -97,8 +101,8 @@ export default function About() {
                 <div style={{
                   background: 'rgba(255, 255, 255, 0.95)',
                   backdropFilter: 'blur(20px)',
-                  borderRadius: '24px',
-                  padding: '3rem',
+                  borderRadius: '20px',
+                  padding: '2rem',
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
@@ -126,45 +130,45 @@ export default function About() {
                   
                   {/* Icon */}
                   <div style={{
-                    width: '80px',
-                    height: '80px',
-                    borderRadius: '20px',
+                    width: '60px',
+                    height: '60px',
+                    borderRadius: '16px',
                     background: card.gradient,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: '2rem',
-                    marginBottom: '2rem',
-                    boxShadow: '0 12px 35px rgba(0, 0, 0, 0.15)',
+                    fontSize: '1.5rem',
+                    marginBottom: '1.5rem',
+                    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)',
                     position: 'relative',
                     zIndex: 2
-                  }}>
+                  }} className="sm:w-20 sm:h-20 sm:text-2xl sm:mb-8">
                     {card.icon}
                   </div>
                   
                   {/* Title */}
                   <h3 style={{
-                    fontSize: '1.8rem',
+                    fontSize: '1.4rem',
                     fontWeight: '700',
                     color: '#1e293b',
-                    marginBottom: '1.5rem',
+                    marginBottom: '1rem',
                     fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif',
                     position: 'relative',
                     zIndex: 2
-                  }}>
+                  }} className="sm:text-2xl sm:mb-6">
                     {card.title}
                   </h3>
                   
                   {/* Content */}
                   <p style={{
-                    fontSize: '1.1rem',
+                    fontSize: '0.9rem',
                     color: '#64748b',
                     lineHeight: '1.6',
-                    maxWidth: '400px',
+                    maxWidth: '350px',
                     position: 'relative',
                     zIndex: 2,
                     fontFamily: '"Inter", "Helvetica Neue", Arial, sans-serif'
-                  }}>
+                  }} className="sm:text-lg sm:max-w-md">
                     {card.content}
                   </p>
                 </div>

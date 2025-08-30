@@ -27,9 +27,13 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+    <section className="relative py-20 bg-gradient-to-br from-blue-50 to-white overflow-hidden">
+      {/* Blue gradient elements - Hidden on mobile */}
+      <div className="hidden md:block absolute top-12 right-16 w-56 h-56 bg-blue-500/45 rounded-full blur-3xl animate-pulse"></div>
+      <div className="hidden md:block absolute bottom-20 left-12 w-40 h-40 bg-blue-400/50 rounded-full blur-2xl animate-pulse delay-700"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16 px-4">
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
             CLIENT <span className="text-blue-600">SUCCESS STORIES</span>
           </h2>
@@ -39,11 +43,11 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-0">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 group hover:scale-105 transition-transform duration-300"
+              className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group hover:scale-105"
             >
               <div className="flex items-center mb-6">
                 <div className="text-4xl mr-4">{testimonial.image}</div>

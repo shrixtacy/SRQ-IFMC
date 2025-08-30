@@ -49,9 +49,13 @@ export default function Stats() {
   ]
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <section ref={sectionRef} className="relative py-20 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+      {/* Blue gradient elements - Hidden on mobile */}
+      <div className="hidden md:block absolute top-10 right-20 w-52 h-52 bg-blue-500/40 rounded-full blur-3xl animate-pulse"></div>
+      <div className="hidden md:block absolute bottom-16 left-10 w-44 h-44 bg-blue-400/50 rounded-full blur-2xl animate-pulse delay-500"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className={`text-center mb-12 sm:mb-16 px-4 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
             TRUSTED BY <span className="text-blue-600">THOUSANDS</span>
           </h2>
@@ -61,7 +65,7 @@ export default function Stats() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 px-2 sm:px-0">
           {stats.map((stat, index) => (
             <div 
               key={index}
@@ -74,14 +78,14 @@ export default function Stats() {
                 transitionDelay: isVisible ? `${index * 200}ms` : '0ms'
               }}
             >
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
                 <div className="text-4xl mb-4 animate-bounce">{stat.icon}</div>
-                <div className="text-3xl md:text-4xl font-black text-gray-900 mb-2">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-2">
                   {index === 2 ? `₹${animatedNumbers[index]}Cr+` : 
                    index === 3 ? `${animatedNumbers[index]}%` : 
                    `${animatedNumbers[index]}+`}
                 </div>
-                <div className="text-sm font-medium text-gray-600 uppercase tracking-wide">
+                <div className="text-xs sm:text-sm font-medium text-gray-600 uppercase tracking-wide">
                   {stat.label}
                 </div>
               </div>

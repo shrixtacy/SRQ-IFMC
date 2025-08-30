@@ -50,9 +50,13 @@ export default function Features() {
   ]
 
   return (
-    <section ref={sectionRef} className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <section ref={sectionRef} className="relative py-20 bg-white overflow-hidden">
+      {/* Blue gradient elements - Hidden on mobile */}
+      <div className="hidden md:block absolute top-16 left-8 w-40 h-40 bg-blue-500/45 rounded-full blur-2xl"></div>
+      <div className="hidden md:block absolute bottom-20 right-12 w-56 h-56 bg-blue-400/50 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className={`text-center mb-12 sm:mb-16 px-4 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
             WHY CHOOSE <span className="text-blue-600">SRQ IFMC</span>
           </h2>
@@ -62,7 +66,7 @@ export default function Features() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-0">
           {features.map((feature, index) => (
             <div 
               key={index}

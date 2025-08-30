@@ -25,7 +25,11 @@ export default function Contact() {
   }
 
   return (
-    <section className="section bg-gray" id="contact-us">
+    <section className="section bg-gray relative overflow-hidden" id="contact-us">
+      {/* Blue gradient elements - Hidden on mobile */}
+      <div className="hidden md:block absolute top-16 right-14 w-48 h-48 bg-blue-500/45 rounded-full blur-2xl animate-pulse"></div>
+      <div className="hidden md:block absolute bottom-20 left-12 w-56 h-56 bg-blue-400/50 rounded-full blur-3xl animate-pulse delay-800"></div>
+      
       <div className="section-container">
         <div className="section-header">
           <h2 className="section-title">Get in Touch</h2>
@@ -34,13 +38,13 @@ export default function Contact() {
           </p>
         </div>
         
-        <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start'}}>
+        <div style={{display: 'grid', gridTemplateColumns: '1fr', gap: '3rem', alignItems: 'start'}} className="lg:grid-cols-2 lg:gap-16">
           <div>
             <h3 style={{fontSize: '1.3rem', fontWeight: 600, color: '#1e293b', marginBottom: '2rem'}}>
               Contact Information
             </h3>
             
-            <div style={{display: 'flex', flexDirection: 'column', gap: '2rem'}}>
+            <div style={{display: 'flex', flexDirection: 'column', gap: '1.5rem'}} className="sm:gap-8">
               <div style={{display: 'flex', gap: '1rem', alignItems: 'flex-start'}}>
                 <div style={{
                   width: '50px',
@@ -57,8 +61,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 style={{fontSize: '1.1rem', fontWeight: 600, color: '#1e293b', marginBottom: '0.5rem'}}>Our Office</h4>
-                  <p style={{color: '#64748b', margin: 0, lineHeight: 1.5}}>123 Financial District, Business Tower</p>
-                  <p style={{color: '#64748b', margin: 0, lineHeight: 1.5}}>New York, NY 10001</p>
+                  <p style={{color: '#64748b', margin: 0, lineHeight: 1.5}}>DCB-228 DLF CYBERCITY, PATIA BHUBANESWAR</p>
                 </div>
               </div>
               
@@ -78,8 +81,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 style={{fontSize: '1.1rem', fontWeight: 600, color: '#1e293b', marginBottom: '0.5rem'}}>Phone</h4>
-                  <p style={{color: '#64748b', margin: 0, lineHeight: 1.5}}>+1 (555) 123-4567</p>
-                  <p style={{color: '#64748b', margin: 0, lineHeight: 1.5}}>+1 (555) 987-6543</p>
+                  <p style={{color: '#64748b', margin: 0, lineHeight: 1.5}}>+91 87630 19090</p>
                 </div>
               </div>
               
@@ -130,8 +132,8 @@ export default function Contact() {
             <h3 style={{fontSize: '1.3rem', fontWeight: 600, color: '#1e293b', marginBottom: '1.5rem'}}>
               Send Us a Message
             </h3>
-            <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column', gap: '1.5rem'}}>
-              <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem'}}>
+            <form onSubmit={handleSubmit} style={{display: 'flex', flexDirection: 'column', gap: '1.25rem'}} className="sm:gap-6">
+              <div style={{display: 'grid', gridTemplateColumns: '1fr', gap: '1rem'}} className="sm:grid-cols-2">
                 <div>
                   <label style={{display: 'block', marginBottom: '0.5rem', fontWeight: 500, color: '#374151'}}>
                     Full Name
